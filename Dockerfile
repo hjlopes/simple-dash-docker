@@ -1,7 +1,7 @@
-FROM python:3.8
+FROM python:3.7
 
-COPY requirements.txt /tmp/
-RUN pip install -r /tmp/requirements.txt
+COPY requirements-circus.txt /tmp/
+RUN pip install -r /tmp/requirements-circus.txt
 
 WORKDIR ~
 
@@ -10,4 +10,4 @@ COPY data data
 
 EXPOSE 8050
 
-CMD ["python", "./src/app_barplot.py"]
+CMD ["python", "./src/app_circus.py"]
