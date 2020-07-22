@@ -6,7 +6,7 @@ import plotly.graph_objs as go
 import pandas as pd
 import os
 # Get data (originally from https://github.com/chris1610/pbpython/blob/master/data/salesfunnel.xlsx?raw=True)
-df = pd.read_feather(os.path.join(os.getcwd(), "src/data", "sample_data.feather"))
+df = pd.read_feather(os.path.join(os.getcwd(), "data", "sample_data.feather"))
 # Pivot
 pv = pd.pivot_table(df, index=['Name'], columns=["Status"], values=['Quantity'], aggfunc=sum, fill_value=0)
 # Set up bar plots as plotly graph objects
@@ -34,4 +34,4 @@ app.layout = html.Div(children=[
 ])
 # Run
 if __name__ == '__main__':
-    app.run_server(host = '0.0.0.0', debug=True)
+    app.run_server(host = '0.0.0.0', debug=, port="8050")
